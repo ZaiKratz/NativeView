@@ -8,7 +8,9 @@ public class nativeTest : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AugmentedReality" });
+PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AppleARKit", "HeadMountedDisplay",
+"AugmentedReality",
+"AppleImageUtils" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
@@ -19,5 +21,14 @@ public class nativeTest : ModuleRules
 		// PrivateDependencyModuleNames.Add("OnlineSubsystem");
 
 		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
+
+        if (Target.Platform == UnrealTargetPlatform.IOS)
+        {
+            PrivateDependencyModuleNames.Add("IOSRuntimeSettings");
+
+            PublicFrameworks.Add( "ARKit" );
+        }
+
+
 	}
 }

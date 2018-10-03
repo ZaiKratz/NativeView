@@ -10,9 +10,9 @@ static FQRCodeCaptured _onQRCodeCaptured;
 
 @implementation QRReader
 
-@synthesize _viewContainer;
-@synthesize _captureSession;
-@synthesize _videoPreviewLayer;
+//@synthesize _viewContainer;
+//@synthesize _captureSession;
+//@synthesize _videoPreviewLayer;
 
 -(bool)IsQRCodeCaptured
 {

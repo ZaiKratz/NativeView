@@ -22,11 +22,12 @@ DECLARE_DYNAMIC_DELEGATE_OneParam(FQRCodeCaptured, FString, _decodedQRCode);
 {
     NSString* _capturedCode;
     bool bIsQRCodeCaptured;
+    UIView* _viewContainer;
+    AVCaptureSession* _captureSession;
+    AVCaptureVideoPreviewLayer* _videoPreviewLayer;
 }
 
-@property (nonatomic, strong) UIView* _viewContainer;
-@property (nonatomic, strong) AVCaptureSession* _captureSession;
-@property (nonatomic,strong) AVCaptureVideoPreviewLayer* _videoPreviewLayer;
+
 
 -(void)StartReading;
 -(void)StopReading;
